@@ -6,13 +6,20 @@ function Filter() {
   const [filtered, setFiltered] = useState([]);
 
   useEffect(() => {
-    if (localStorage.getItem("data"))
-      setData(JSON.parse(localStorage.getItem("data")));
-    else
+    const savedData = JSON.parse(localStorage.getItem("data"));
+    if (savedData && savedData.length > 0) {
+      setData(JSON.parse(savedData));
+      console.log("mafes");
+    } else {
       fetch("./data.json")
         .then((res) => res.json())
-        .then((json) => setData(json))
+        .then((json) => {
+          setData(json);
+          localStorage.setItem("data", json);
+        })
         .catch((err) => console.log("error ", err));
+      console.log("mafessssssssssss");
+    }
   }, []);
 
   useEffect(() => {
