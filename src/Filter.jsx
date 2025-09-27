@@ -8,8 +8,7 @@ function Filter() {
   useEffect(() => {
     const savedData = JSON.parse(localStorage.getItem("data"));
     if (savedData && savedData.length > 0) {
-      setData(JSON.parse(savedData));
-      console.log("mafes");
+      setData(savedData);
     } else {
       fetch("./data.json")
         .then((res) => res.json())
@@ -18,7 +17,6 @@ function Filter() {
           localStorage.setItem("data", json);
         })
         .catch((err) => console.log("error ", err));
-      console.log("mafessssssssssss");
     }
   }, []);
 
@@ -56,7 +54,7 @@ function Filter() {
         </h1>
         <div className="flex justify-between gap-4">
           <label
-            for="allFilter"
+            htmlFor="allFilter"
             className="cursor-pointer h-8 w-10 rounded-full bg-[var(--theme-button)] text-center p-1 text-[var(--text)] outline-[var(--red-500)] outline-offset-3 transition-colors hover:outline-2 hover:bg-slate-400 has-checked:text-[var(--reverse-text)] has-checked:outline-2 has-checked:bg-[var(--red-400)]"
           >
             <input
@@ -71,7 +69,7 @@ function Filter() {
           </label>
 
           <label
-            for="activeFilter"
+            htmlFor="activeFilter"
             className="cursor-pointer h-8 w-18 rounded-full bg-[var(--theme-button)] text-center p-1 text-[var(--text)] outline-[var(--red-500)] outline-offset-3 transition-colors hover:outline-2 hover:bg-slate-400 has-checked:text-[var(--reverse-text)] has-checked:outline-2 has-checked:bg-[var(--red-400)]"
           >
             <input
@@ -85,7 +83,7 @@ function Filter() {
           </label>
 
           <label
-            for="inActiveFilter"
+            htmlFor="inActiveFilter"
             className="cursor-pointer h-8 w-20 rounded-full bg-[var(--theme-button)] text-center p-1  text-[var(--text)] outline-[var(--red-500)] outline-offset-3 transition-colors hover:outline-2 hover:bg-slate-400 has-checked:text-[var(--reverse-text)] has-checked:outline-2 has-checked:bg-[var(--red-400)]"
           >
             <input
