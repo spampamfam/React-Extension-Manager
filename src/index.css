@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+:root {
+  /* --navy-dark: hsl(227, 75%, 14%); 
+  --navy: hsl(226, 25%, 17%);
+  --navy-muted: hsl(225, 23%, 24%);
+  --slate: hsl(226, 11%, 37%);  */
+
+  --background: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+
+  --header: hsl(200, 60%, 99%); /* almost white */
+  --theme-button: hsl(0, 0%, 93%); /* soft gray */
+  --logoText: #091540;
+
+  --toggle: hsl(0, 0%, 78%); /* light gray */
+  --text: hsl(227, 75%, 14%);
+  --reverse-text: hsl(217, 61%, 90%); /* pale blue */
+
+  --red-400: hsl(3, 86%, 64%);
+  --red-500: hsl(3, 71%, 56%);
+  --red-700: hsl(3, 77%, 44%);
+}
+
+[data-theme="dark"] {
+  --background: linear-gradient(180deg, #040918 0%, #091540 100%);
+
+  --logoText: hsl(0, 0%, 93%);
+  --header: hsl(226, 25%, 17%);
+  --theme-button: hsl(225, 23%, 24%);
+  --text: hsl(217, 61%, 90%); /* pale blue */
+  --reverse-text: hsl(227, 75%, 14%);
+
+  --toggle: hsl(226, 11%, 37%);
+}
+
+.action__button {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.button__label {
+  max-height: 40px;
+  background-color: var(--white);
+  border-radius: 9999px;
+  text-align: center;
+  cursor: pointer;
+  padding: clamp(0.4rem, 1vw, 0.6rem) clamp(0.8rem, 1vw, 0.5rem);
+  transition: background-color 150ms ease;
+}
